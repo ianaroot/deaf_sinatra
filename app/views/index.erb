@@ -1,6 +1,12 @@
 <div class="container">
   <h1>Deaf Grandma</h1>
+
   <% if @grandma %>
+    <% if @grandma != @grandma.upcase %>
+      <% @grandma = "WHAT'S THAT, SONNY? SPEAK UP!" %>
+    <%  elsif @grandma == @grandma.upcase %>
+      <% @grandma = "NO. NOT SINCE 1973!" %>
+    <% end %>
     <p>Grandma says: "<span id="grandma_says"><%= @grandma %></span>"</p>
   <% end %>
 
